@@ -30,6 +30,35 @@
             -webkit-text-fill-color: transparent;
             background-image: linear-gradient(to right, #4f46e5, #ec4899);
         }
+
+        /* Keyframes untuk animasi scrolling */
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%); /* Menggeser 50% dari total lebar untuk mengulang */
+    }
+}
+
+.logo-scroller-A {
+    animation: scroll-left 50s linear infinite; /* 50s durasi, linear, dan loop tak terbatas */
+    width: max-content; 
+}
+.logo-scroller-B {
+    animation: scroll-left 50s linear infinite reverse; /* Scrolling ke arah berlawanan */
+    width: max-content; 
+}
+
+/* Container untuk menyembunyikan overflow */
+.scroller-container {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.logo-item {
+    min-width: 100px; /* Ukuran minimum agar ada jarak */
+}
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
@@ -38,8 +67,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">P</div>
-                    <span class="text-2xl font-extrabold text-indigo-900 tracking-tight">Progress<span class="text-orange-500">+</span></span>
+                    <img src="assets/img/Progress+ Tagline.png" alt="logo Progress+" class="h-10 w-auto">
                 </div>
 
                 <nav class="hidden md:flex space-x-8">
@@ -77,7 +105,7 @@
         </div>
     </header>
 
-    <section id="hero" class="pt-16 pb-24 bg-white overflow-hidden relative">
+    <section id="hero" class="min-h-screen pt-16 pb-24 bg-white overflow-hidden relative">
         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-indigo-50 opacity-50 blur-3xl"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -103,7 +131,7 @@
                 </a>
             </div>
             
-            <div class="relative mx-auto w-full max-w-[300px] md:max-w-md">
+            <!-- <div class="relative mx-auto w-full max-w-[300px] md:max-w-md">
                 <div class="relative rounded-[2.5rem] border-[8px] border-gray-900 bg-gray-900 shadow-2xl mockup-shadow overflow-hidden">
                     <div class="h-[600px] bg-white flex flex-col items-center justify-center text-center p-6">
                         <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center text-3xl mb-4">📱</div>
@@ -111,20 +139,359 @@
                         <p class="text-xs text-gray-300 mt-2">(Ukuran 1080x1920)</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
+
         </div>
     </section>
 
-    <section id="trust" class="py-10 bg-gray-50 border-y border-gray-100">
+
+    <section id="clients-scroll" class="py-12 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="text-center text-sm font-semibold uppercase tracking-widest text-gray-400 mb-6">
-                Dipercaya oleh Profesional & Mitra Pelatihan
-            </p>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                <span class="text-xl font-bold text-gray-600">BNSP</span>
-                <span class="text-xl font-bold text-gray-600">KEMNAKER</span>
-                <span class="text-xl font-bold text-gray-600">ISO CERT</span>
-                <span class="text-xl font-bold text-gray-600">MICROSOFT</span>
+            <h2 class="text-center text-2xl font-bold text-gray-800 mb-10">
+                🤝 Dipercaya oleh Lebih Dari 50 Perusahaan Ternama
+            </h2>
+        </div>
+        
+        <div class="scroller-container relative mb-6">
+            <div class="logo-scroller-A flex space-x-16 items-center">
+                
+                <div class="inline-flex space-x-16">
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/1. PG gorontalo.jpeg" alt="PG Gorontalo" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/2. PT Pelabuhan Indonesia.png" alt="PT Pelabuhan Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/3. PT Pertamina Kilang International.png" alt="PT Pertamina Kilang International" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/4. PT Indofood CBP Sukses Makmur.png" alt="PT Indofood CBP Sukses Makmur" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/5. PT Lear Automotive Indonesia.png" alt="PT Lear Automotive Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/6. PT Asahi Denso Indonesia.png" alt="PT Asahi Denso Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/7. PT Sumi Rubber Indonesia.png" alt="PT Sumi Rubber Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/8. PT PHC Indonesia.png" alt="PT PHC Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/9. PT BMI Monier.png" alt="PT BMI Monier" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/10. Astra Group.png" alt="Astra Group" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/11. PT Elsewedy Electric Indonesia.png" alt="PT Elsewedy Electric Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/12. PT Flora Food Manufacturing Indonesia.png" alt="PT Flora Food Manufacturing Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/13. PT Lion Wings.png" alt="PT Lion Wings" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/14. PT Multikimia Intipelangi.png" alt="PT Multikimia Intipelangi" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/15. PT Antam.png" alt="PT Antam" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/16. PT Kebun Tebu Mas.png" alt="PT Kebun Tebu Mas" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/17. PT Kiriu Indonesia.png" alt="PT Kiriu Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/18. PT Indonesia Weda Bay.png" alt="PT Indonesia Weda Bay" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/19. PT Supernova Flexible Packaging.png" alt="PT Supernova Flexible Packaging" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/20. PT NOK Indonesia.png" alt="PT NOK Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/21. PT Nippon Indosari Corpindo.png" alt="PT Nippon Indosari Corpindo" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/22. PT Halmahera.png" alt="PT Halmahera" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/23. PT CKD Otto Pharmaceutical.png" alt="PT CKD Otto Pharmaceutical" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/24. PT Graha Karya Inti (agung sedayu group).png" alt="PT Graha Karya Inti" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/25. PT Suzuki Manufacturing Indonesia.png" alt="PT Suzuki Manufacturing Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/26. PT Aida Indonesia.png" alt="PT Aida Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/27. PT Industri Ceres.png" alt="PT Industri Ceres" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/28. PT Tirta Fresindo Jaya.png" alt="PT Tirta Fresindo Jaya" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                </div>
+
+                <div class="inline-flex space-x-16">
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/1. PG gorontalo.jpeg" alt="PG Gorontalo" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/2. PT Pelabuhan Indonesia.png" alt="PT Pelabuhan Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/3. PT Pertamina Kilang International.png" alt="PT Pertamina Kilang International" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/4. PT Indofood CBP Sukses Makmur.png" alt="PT Indofood CBP Sukses Makmur" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/5. PT Lear Automotive Indonesia.png" alt="PT Lear Automotive Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/6. PT Asahi Denso Indonesia.png" alt="PT Asahi Denso Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/7. PT Sumi Rubber Indonesia.png" alt="PT Sumi Rubber Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/8. PT PHC Indonesia.png" alt="PT PHC Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/9. PT BMI Monier.png" alt="PT BMI Monier" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/10. Astra Group.png" alt="Astra Group" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/11. PT Elsewedy Electric Indonesia.png" alt="PT Elsewedy Electric Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/12. PT Flora Food Manufacturing Indonesia.png" alt="PT Flora Food Manufacturing Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/13. PT Lion Wings.png" alt="PT Lion Wings" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/14. PT Multikimia Intipelangi.png" alt="PT Multikimia Intipelangi" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/15. PT Antam.png" alt="PT Antam" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/16. PT Kebun Tebu Mas.png" alt="PT Kebun Tebu Mas" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/17. PT Kiriu Indonesia.png" alt="PT Kiriu Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/18. PT Indonesia Weda Bay.png" alt="PT Indonesia Weda Bay" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/19. PT Supernova Flexible Packaging.png" alt="PT Supernova Flexible Packaging" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/20. PT NOK Indonesia.png" alt="PT NOK Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/21. PT Nippon Indosari Corpindo.png" alt="PT Nippon Indosari Corpindo" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/22. PT Halmahera.png" alt="PT Halmahera" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/23. PT CKD Otto Pharmaceutical.png" alt="PT CKD Otto Pharmaceutical" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/24. PT Graha Karya Inti (agung sedayu group).png" alt="PT Graha Karya Inti" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/25. PT Suzuki Manufacturing Indonesia.png" alt="PT Suzuki Manufacturing Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/26. PT Aida Indonesia.png" alt="PT Aida Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/27. PT Industri Ceres.png" alt="PT Industri Ceres" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/28. PT Tirta Fresindo Jaya.png" alt="PT Tirta Fresindo Jaya" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroller-container relative">
+            <div class="logo-scroller-B flex space-x-16 items-center">
+                
+                <div class="inline-flex space-x-16">
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/29. PT Mayora Indah Tbk.png" alt="PT Mayora Indah Tbk" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/30. PT Tokki Engineering and Fabrication.png" alt="PT Tokki Engineering and Fabrication" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/31. BWI Indonesia.png" alt="BWI Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/32. PT Sari Enesis Indah.png" alt="PT Sari Enesis Indah" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/33. PT Citra Putra Kebun Asri.png" alt="PT Citra Putra Kebun Asri" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/34. PT Monde Mahkota Biskuit.png" alt="PT Monde Mahkota Biskuit" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/35. PT Sumiden Sintered Components Indonesia.png" alt="PT Sumiden Sintered Components Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/36. PT Resonac.png" alt="PT Resonac" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/37. PT Pamapersada.png" alt="PT Pamapersada" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/38. PT Rubycon Indonesia.png" alt="PT Rubycon Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/39. PT Cisarua Mintain Dairy.png" alt="PT Cisarua Mintain Dairy" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/40. PT PP Persero.png" alt="PT PP Persero" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/41. PT Cheil Jepang Indonesia.png" alt="PT Cheil Jepang Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/42. PT Minebea AccessSolutions Indonesia.png" alt="PT Minebea AccessSolutions Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/43. PT Hyundai Energy Indonesia.png" alt="PT Hyundai Energy Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/44. PT Roedy S.png" alt="PT Roedy S" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/45. PT Panasonic Industrial Components Indonesia.png" alt="PT Panasonic Industrial Components Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/46. PT Maxpower Indonesia.png" alt="PT Maxpower Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/47. PT Sika Indonesia.png" alt="PT Sika Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/48. PT Arbe Chemindo.png" alt="PT Arbe Chemindo" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/logo-lg.png" alt="LG" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/Logo-TDM-1-2-tanpa-nama-01.png" alt="TDM" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/Pertamina_International_Shipping-.png" alt="Pertamina International Shipping" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/PTCLogo1k.png" alt="PTC" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                </div>
+
+                <div class="inline-flex space-x-16">
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/29. PT Mayora Indah Tbk.png" alt="PT Mayora Indah Tbk" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/30. PT Tokki Engineering and Fabrication.png" alt="PT Tokki Engineering and Fabrication" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/31. BWI Indonesia.png" alt="BWI Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/32. PT Sari Enesis Indah.png" alt="PT Sari Enesis Indah" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/33. PT Citra Putra Kebun Asri.png" alt="PT Citra Putra Kebun Asri" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/34. PT Monde Mahkota Biskuit.png" alt="PT Monde Mahkota Biskuit" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/35. PT Sumiden Sintered Components Indonesia.png" alt="PT Sumiden Sintered Components Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/36. PT Resonac.png" alt="PT Resonac" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/37. PT Pamapersada.png" alt="PT Pamapersada" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/38. PT Rubycon Indonesia.png" alt="PT Rubycon Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/39. PT Cisarua Mintain Dairy.png" alt="PT Cisarua Mintain Dairy" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/40. PT PP Persero.png" alt="PT PP Persero" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/41. PT Cheil Jepang Indonesia.png" alt="PT Cheil Jepang Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/42. PT Minebea AccessSolutions Indonesia.png" alt="PT Minebea AccessSolutions Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/43. PT Hyundai Energy Indonesia.png" alt="PT Hyundai Energy Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/44. PT Roedy S.png" alt="PT Roedy S" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/45. PT Panasonic Industrial Components Indonesia.png" alt="PT Panasonic Industrial Components Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/46. PT Maxpower Indonesia.png" alt="PT Maxpower Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/47. PT Sika Indonesia.png" alt="PT Sika Indonesia" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/48. PT Arbe Chemindo.png" alt="PT Arbe Chemindo" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/logo-lg.png" alt="LG" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/Logo-TDM-1-2-tanpa-nama-01.png" alt="TDM" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/Pertamina_International_Shipping-.png" alt="Pertamina International Shipping" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/PTCLogo1k.png" alt="PTC" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/49. Placeholder 1.png" alt="Placeholder Logo 1" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/50. Placeholder 2.png" alt="Placeholder Logo 2" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                    <div class="h-14 flex items-center justify-center p-2 logo-item opacity-60 hover:opacity-100 transition duration-300">
+                        <img src="assets/logoklien/51. Placeholder 3.png" alt="Placeholder Logo 3" class="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -168,7 +535,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12">
                 <div class="max-w-2xl">
-                    <h2 class="text-3xl font-extrabold text-gray-900">Katalog Populer</h2>
+                    <h2 class="text-3xl font-extrabold text-gray-900">Katalog Layanan</h2>
                     <p class="mt-4 text-lg text-gray-600">Pilihan favorit para profesional minggu ini.</p>
                 </div>
                 <a href="#download" class="hidden md:inline-flex items-center font-semibold text-indigo-600 hover:text-indigo-800 transition mt-4 md:mt-0">
@@ -177,47 +544,177 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+
+
                 <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-indigo-100">
+
                     <div class="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+
                         <span class="text-6xl">👷</span>
+
                     </div>
+
                     <div class="p-6">
+
                         <div class="flex justify-between items-center mb-3">
-                            <span class="bg-green-100 text-green-800 text-xs font-bold px-2.5 py-1 rounded-full">Sertifikasi BNSP</span>
+
+                            <span class="bg-green-100 text-green-800 text-xs font-bold px-2.5 py-1 rounded-full">Sertifikasi</span>
+
                             <div class="flex items-center text-yellow-500 text-sm font-bold">★ 4.9</div>
+
                         </div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">Ahli K3 Umum</h3>
-                        <p class="text-gray-500 text-sm mb-4">Modul lengkap keselamatan kerja + Ujian Kompetensi.</p>
+
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Sertifikasi Kemnaker RI</h3>
+
+                        <p class="text-gray-500 text-sm mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, dolorem!</p>
+
                     </div>
+
                 </div>
 
+
+
                 <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-indigo-100">
+
                     <div class="h-48 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
+
                         <span class="text-6xl">📈</span>
+
                     </div>
+
                     <div class="p-6">
+
                         <div class="flex justify-between items-center mb-3">
-                            <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-2.5 py-1 rounded-full">Digital Skill</span>
+
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-2.5 py-1 rounded-full">Sertifikasi</span>
+
                             <div class="flex items-center text-yellow-500 text-sm font-bold">★ 4.8</div>
+
                         </div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">Digital Marketing Pro</h3>
-                        <p class="text-gray-500 text-sm mb-4">Strategi SEO, SEM, dan Social Media Ads untuk Bisnis.</p>
+
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Sertifikasi BNSP</h3>
+
+                        <p class="text-gray-500 text-sm mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, neque!</p>
+
                     </div>
+
                 </div>
 
+
+
                 <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-indigo-100">
+
                     <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+
                         <span class="text-6xl">💼</span>
+
                     </div>
+
                     <div class="p-6">
+
                         <div class="flex justify-between items-center mb-3">
-                            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-1 rounded-full">Leadership</span>
+
+                            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-1 rounded-full">sertifikasi</span>
+
                             <div class="flex items-center text-yellow-500 text-sm font-bold">★ 5.0</div>
+
                         </div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">HR Management</h3>
-                        <p class="text-gray-500 text-sm mb-4">Pengelolaan SDM modern dan peraturan ketenagakerjaan.</p>
+
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Pelatihan Non-Sertifikasi</h3>
+
+                        <p class="text-gray-500 text-sm mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, dicta!</p>
+
                     </div>
+
                 </div>
+
+
+
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-indigo-100">
+
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+
+                        <span class="text-6xl">👷</span>
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <div class="flex justify-between items-center mb-3">
+
+                            <span class="bg-green-100 text-green-800 text-xs font-bold px-2.5 py-1 rounded-full">-</span>
+
+                            <div class="flex items-center text-yellow-500 text-sm font-bold">★ 4.9</div>
+
+                        </div>
+
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Pelatihan Non-Sertifikasi</h3>
+
+                        <p class="text-gray-500 text-sm mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, dolorem!</p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-indigo-100">
+
+                    <div class="h-48 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
+
+                        <span class="text-6xl">📈</span>
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <div class="flex justify-between items-center mb-3">
+
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-2.5 py-1 rounded-full">-</span>
+
+                            <div class="flex items-center text-yellow-500 text-sm font-bold">★ 4.8</div>
+
+                        </div>
+
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Pelatihan Non-Sertifikat SDM</h3>
+
+                        <p class="text-gray-500 text-sm mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, neque!</p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-indigo-100">
+
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+
+                        <span class="text-6xl">💼</span>
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <div class="flex justify-between items-center mb-3">
+
+                            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-1 rounded-full">-</span>
+
+                            <div class="flex items-center text-yellow-500 text-sm font-bold">★ 5.0</div>
+
+                        </div>
+
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Konsultasi</h3>
+
+                        <p class="text-gray-500 text-sm mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, dicta!</p>
+
+                    </div>
+
+                </div>
+
+
+
             </div>
             
             <div class="text-center mt-8 md:hidden">
