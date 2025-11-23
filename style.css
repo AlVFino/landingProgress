@@ -1,0 +1,79 @@
+        /* Custom Font (Optional) */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+
+        #hero{
+            background: url(assets/img/bghero.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Button Glow Effect */
+        .cta-button { transition: all 0.3s ease; }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.5); /* Orange Glow */
+        }
+
+    .liquid-hover {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .liquid-hover::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(120deg, rgba(91, 245, 77, 0.15), rgba(188, 69, 218, 0.25));
+        transition: all .6s ease;
+    }
+
+    .liquid-hover:hover::before {
+        right: 0;
+    }
+
+        /* Mockup Shadow Effect */
+        .mockup-shadow {
+            box-shadow: 0 25px 50px -12px rgba(79, 70, 229, 0.35);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #4f46e5, #ec4899);
+        }
+
+        /* Keyframes untuk animasi scrolling */
+        @keyframes scroll-left {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%); /* Menggeser 50% dari total lebar untuk mengulang */
+            }
+        }
+
+        .logo-scroller-A {
+            animation: scroll-left 50s linear infinite; /* 50s durasi, linear, dan loop tak terbatas */
+            width: max-content; 
+        }
+        .logo-scroller-B {
+            animation: scroll-left 50s linear infinite reverse; /* Scrolling ke arah berlawanan */
+            width: max-content; 
+        }
+
+        /* Container untuk menyembunyikan overflow */
+        .scroller-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .logo-item {
+            min-width: 100px; /* Ukuran minimum agar ada jarak */
+        }
