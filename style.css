@@ -3,7 +3,7 @@
         body { font-family: 'Inter', sans-serif; }
 
         #hero{
-            background: url(assets/img/bghero.png);
+            background: url(assets/img/bghero1.svg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
