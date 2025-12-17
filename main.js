@@ -1,4 +1,13 @@
-        AOS.init();
+document.addEventListener('DOMContentLoaded', () => {
+  AOS.init({
+    once: false,
+    duration: 700,
+    easing: 'ease-out-cubic',
+    offset: 80,
+    disableMutationObserver: true
+  });
+});
+
         
         // Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-btn');
