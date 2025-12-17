@@ -17,8 +17,7 @@
         }
 
     .liquid-hover {
-        position: relative;
-        overflow: hidden;
+        position: relative;     
     }
 
     .liquid-hover::before {
@@ -69,8 +68,7 @@
         }
 
         /* Container untuk menyembunyikan overflow */
-        .scroller-container {
-            overflow: hidden;
+        .scroller-container {           
             white-space: nowrap;
         }
 
