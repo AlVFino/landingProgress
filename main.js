@@ -1,11 +1,17 @@
-        document.addEventListener("DOMContentLoaded", function () {
+
+        window.addEventListener("load", function () {
             AOS.init({
             once: false,
             duration: 700,
             easing: "ease-out-cubic",
             offset: 80,
             });
+
+            setTimeout(() => {
+            AOS.refreshHard();
+            }, 300);
         });
+
         
         // Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-btn');
