@@ -77,7 +77,3 @@
         .logo-item {
             min-width: 100px; /* Ukuran minimum agar ada jarak */
         }
-
-        [data-aos] {
-  will-change: transform, opacity;
-}
