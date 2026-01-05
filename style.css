@@ -1,5 +1,6 @@
         /* Custom Font (Optional) */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
         body { font-family: 'Inter', sans-serif; }
 
         #hero{
@@ -17,7 +18,8 @@
         }
 
     .liquid-hover {
-        position: relative;     
+        position: relative;   
+        overflow: hidden;  
     }
 
     .liquid-hover::before {
@@ -74,4 +76,181 @@
 
         .logo-item {
             min-width: 100px; /* Ukuran minimum agar ada jarak */
+        }
+
+        .fab-message {
+            position: fixed;
+            bottom: 15px;
+            right: 30px;
+            z-index: 9999;
+        }
+
+        .fab-message-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: softFloat 4s ease-in-out infinite;
+            border-radius: 50%;
+            border: none;
+        }
+
+        /* Gerakan lembut dan lambat (naik-turun sedikit) */
+        @keyframes softFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        .fab-message-btn img {
+            transition: transform 0.3s;
+        }
+
+        .fab-message-btn:hover {
+            transform: translateY(-4px);
+        }
+
+        .fab-message-btn:hover img {
+            transform: scale(1.05);
+        }
+
+        .fab-message-options {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            background: #fff;
+            border-radius: 12px;
+            padding: 0;
+            width: 280px;
+            max-height: 350px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #cbd5e0 #f7fafc;
+        }
+
+        .fab-message-options::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .fab-message-options::-webkit-scrollbar-track {
+            background: #f7fafc;
+            border-radius: 3px;
+        }
+
+        .fab-message-options::-webkit-scrollbar-thumb {
+            background-color: #cbd5e0;
+            border-radius: 3px;
+        }
+
+        .fab-message-options.show {
+            display: flex;
+        }
+
+        .fab-message-header {
+            padding: 15px 20px;
+            font-weight: 600;
+            font-size: 18px;
+            color: #2d3748;
+            border-bottom: 2px solid #e2e8f0;
+            background-color: #f8fafc;
+            border-radius: 12px 12px 0 0;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        .fab-message-option {
+            padding: 16px 20px;
+            color: #333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            font-size: 16px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .fab-message-option:last-child {
+            border-bottom: none;
+        }
+
+        .fab-message-option:hover {
+            background: #f8fafc;
+        }
+
+        .contact-avatar {
+            border-radius: 50%;
+            border: 2px solid #25D366;
+            flex-shrink: 0;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            min-width: 0;
+            /* Untuk mencegah overflow teks */
+        }
+
+        .contact-number {
+            font-weight: 600;
+            color: #222;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .contact-status {
+            font-size: 13px;
+            color: #25D366;
+            font-weight: 500;
+        }
+
+        .fab-message-footer {
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #718096;
+            background-color: #f8fafc;
+            border-radius: 0 0 12px 12px;
+            border-top: 1px solid #e2e8f0;
+            position: sticky;
+            bottom: 0;
+        }
+
+        .close {
+            padding: 6px;
+            border-radius: 15px;
+        }
+
+        .close:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            transform: translateY(-3px) scale(1.03);
+        }
+
+        @media (max-width: 640px) {
+            .fab-message {
+                bottom: 10px;
+                right: 15px;
+            }
+
+            .fab-message-options {
+                width: 260px;
+                max-height: 300px;
+            }
         }
